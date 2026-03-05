@@ -10,7 +10,11 @@ function subscribe(cb: () => void) {
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false
+  );
 
   if (!mounted) return <div className="w-9 h-9" />;
 
