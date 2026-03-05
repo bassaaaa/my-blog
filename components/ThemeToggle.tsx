@@ -1,17 +1,18 @@
-'use client'
+'use client';
 
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes';
+import { useSyncExternalStore } from 'react';
+
+function subscribe(cb: () => void) {
+  window.addEventListener('storage', cb);
+  return () => window.removeEventListener('storage', cb);
+}
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return <div className="w-9 h-9" />
+  if (!mounted) return <div className="w-9 h-9" />;
 
   return (
     <button
@@ -21,5 +22,5 @@ export default function ThemeToggle() {
     >
       {theme === 'dark' ? '☀️' : '🌙'}
     </button>
-  )
+  );
 }
