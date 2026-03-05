@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
 import PostCard from '@/components/PostCard'
+import { SITE_NAME } from '../constant'
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 5)
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
       <section className="mb-10">
-        <h1 className="text-3xl font-bold mb-2">my-tech-blog</h1>
+        <h1 className="text-3xl font-bold mb-2">{SITE_NAME}</h1>
         <p className="text-gray-600 dark:text-gray-400">技術・学習・趣味について書くブログ</p>
       </section>
 
