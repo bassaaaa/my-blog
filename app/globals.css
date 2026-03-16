@@ -120,6 +120,25 @@ body {
   margin: 2em 0;
 }
 
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.75em;
+  font-size: 0.9rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.prose th {
+  background: var(--surface);
+  font-weight: 600;
+}
+
 /* OGP embed card */
 .prose .ogp-card {
   display: flex;

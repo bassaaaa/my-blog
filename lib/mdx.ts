@@ -1,5 +1,6 @@
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
@@ -17,6 +18,7 @@ export async function markdownToHtml(
 
 	const file = await unified()
 		.use(remarkParse)
+		.use(remarkGfm)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeSlug)
 		.use(() => async (tree) => {
