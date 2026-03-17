@@ -146,7 +146,14 @@ function buildOgpCardNode(ogp: OgpData) {
 			type: 'element',
 			tagName: 'p',
 			properties: { className: ['ogp-card-title'] },
-			children: [{ type: 'text', value: ogp.title }],
+			children: [
+				{
+					type: 'element',
+					tagName: 'span',
+					properties: { className: ['ogp-card-title-text'] },
+					children: [{ type: 'text', value: ogp.title }],
+				},
+			],
 		},
 		...(ogp.description
 			? [
@@ -188,7 +195,14 @@ function buildInternalCardNode(post: { slug: string; title: string; description:
 			type: 'element',
 			tagName: 'p',
 			properties: { className: ['ogp-card-title'] },
-			children: [{ type: 'text', value: post.title }],
+			children: [
+				{
+					type: 'element',
+					tagName: 'span',
+					properties: { className: ['ogp-card-title-text'] },
+					children: [{ type: 'text', value: post.title }],
+				},
+			],
 		},
 		...(post.description
 			? [
