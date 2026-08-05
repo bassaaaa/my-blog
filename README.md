@@ -52,7 +52,21 @@ externalLabel: 'noteで読む'
 ---
 ```
 
-`published: false` にすると下書き扱いになり一覧に表示されない。
+`published: false`にすると下書き扱いになり、一覧にも個別ページにも表示されない。URLで確認するときは`true`にする。
+
+### 42課題の振り返り
+
+課題slugを指定すると、振り返り用のページを作成できる。
+
+```bash
+npm run new:42 -- ft-printf ft_printf
+```
+
+`content/42tokyo/42-ft-printf.md`が作成され、URLは`/blog/42-ft-printf`になる。第2引数の表示名を省略した場合は、slugがそのままタイトルとタグに使われる。
+
+テンプレートは`templates/42-retrospective.md`にある。全項目を埋める必要はなく、不要な見出しは削除してよい。42課題の記事は自分用の記録として、箇条書きのまま公開してよい。
+
+詳しい運用は[`docs/writing-workflow.md`](docs/writing-workflow.md)を参照。
 
 ## Project Structure
 
@@ -63,6 +77,8 @@ components/    # Header, Footer, PostCard, TagList, ThemeToggle, CategoryChip,
 lib/           # posts.ts（記事取得）, mdx.ts（Markdown 変換・見出し抽出）
 types/         # post.ts（PostMeta, Post）
 content/       # .md ファイル（カテゴリごとのサブフォルダ）
+scripts/       # 記事雛形の生成コマンド
+templates/     # content外に置く記事テンプレート
 public/        # 静的ファイル
 ```
 

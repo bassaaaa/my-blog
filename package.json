@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "eslint"
+		"lint": "eslint",
+		"new:42": "node scripts/new-42-post.mjs"
 	},
 	"overrides": {
 		"postcss": "8.5.12"
