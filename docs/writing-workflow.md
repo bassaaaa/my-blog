@@ -57,26 +57,26 @@ git push
 新しい記事アイデアが浮かんだらIssueを作成する。
 
 ```bash
-gh issue create --repo bassaaaa/tsito.me \
+gh issue create --repo tsito2602/tsito.me \
   --title "記事タイトル" \
   --label "アイデア" \
   --body "## 概要\n\n## 書くこと\n- "
 ```
 
-または[GitHub Issues](https://github.com/bassaaaa/tsito.me/issues)から直接作成する。
+または[GitHub Issues](https://github.com/tsito2602/tsito.me/issues)から直接作成する。
 
 ### 2. 執筆を開始する
 
 Issueに「執筆中」ラベルを付けてブランチを切る。
 
 ```bash
-gh issue edit <issue番号> --repo bassaaaa/tsito.me --add-label "執筆中"
+gh issue edit <issue番号> --repo tsito2602/tsito.me --add-label "執筆中"
 git checkout -b post/<スラッグ>
 ```
 
 例：
 ```bash
-gh issue edit 1 --repo bassaaaa/tsito.me --add-label "執筆中"
+gh issue edit 1 --repo tsito2602/tsito.me --add-label "執筆中"
 git checkout -b post/42tokyo-kickoff
 ```
 
